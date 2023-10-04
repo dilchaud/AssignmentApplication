@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="spacing_240">240dp</dimen>
+    <dimen name="spacing_100">100dp</dimen>
+    <dimen name="no_spacing">0dp</dimen>
+    <dimen name="spacing_24">24dp</dimen>
+    <dimen name="spacing_10">10dp</dimen>
+    <dimen name="spacing_5">5dp</dimen>
+</resources>
