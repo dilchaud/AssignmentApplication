@@ -2,12 +2,15 @@ A sample project using free API which returns list of gamees and its details
 
 **Home Screen**
 
-<img width="389" alt="Screenshot 2023-10-04 at 7 46 53 PM" src="https://github.com/dilchaud/AssignmentApplication/assets/146961623/adf5db7d-f728-49b2-b755-8e452bf419f8">
+<img width="431" alt="Screenshot 2023-10-06 at 8 30 25 PM" src="https://github.com/dilchaud/AssignmentApplication/assets/146961623/5b46a0dc-0e5d-4b6a-ab30-2adb00664819">
+
 
 **Details**
 
-<img width="406" alt="Screenshot 2023-10-04 at 7 47 10 PM" src="https://github.com/dilchaud/AssignmentApplication/assets/146961623/2bee3bca-f5de-4dd4-8d07-68a370e73ac1">
+<img width="452" alt="Screenshot 2023-10-06 at 8 30 53 PM" src="https://github.com/dilchaud/AssignmentApplication/assets/146961623/1e405012-6578-4e45-bf5d-2b2dfae59a46">
+
 
 **Details Scroll State**
 
-<img width="392" alt="Screenshot 2023-10-04 at 7 47 31 PM" src="https://github.com/dilchaud/AssignmentApplication/assets/146961623/96359224-1688-4273-bcc2-1f97b44b1fb1">
+
+<img width="421" alt="Screenshot 2023-10-06 at 8 31 11 PM" src="https://github.com/dilchaud/AssignmentApplication/assets/146961623/2409d625-29c7-432b-adfd-2d64640350af">
