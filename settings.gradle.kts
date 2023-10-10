@@ -15,8 +15,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "LloydsBankingAssignment"
 include(":app")
-include(":lloyds-data")
-include(":lloyds-domain")
-include(":lloyds-home")
-include(":lloyds-details")
-include(":lloyds-core")
+include(":assignment-data")
+include(":assignment-domain")
+include(":assignment-home")
+include(":assignment-details")
+include(":assignment-core")

@@ -18,13 +18,13 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.lloyds_core.state.DetailsUiEvent
-import com.lloyds_core.state.UiEffect
-import com.lloyds_core.util.Constants.GAME_ID
-import com.lloyds_details.components.DetailsScreen
-import com.lloyds_details.viewmodel.DetailsViewModel
-import com.lloyds_home.components.HomeScreen
-import com.lloyds_home.viewmodel.HomeViewModel
+import com.assignment_core.state.DetailsUiEvent
+import com.assignment_core.state.UiEffect
+import com.assignment_core.util.Constants.GAME_ID
+import com.assignment_details.components.DetailsScreen
+import com.assignment_details.viewmodel.DetailsViewModel
+import com.assignment_home.components.HomeScreen
+import com.assignment_home.viewmodel.HomeViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
