@@ -71,12 +71,6 @@ class GameRepositoryImplTest {
         emit(DataLoadingState.Success(result))
     }
 
-    private fun buildErrorResponse() = flow<DataLoadingState<GameItem>> {
-        emit(DataLoadingState.Error(buildErrorMsg()))
-    }
-
-    private fun buildErrorMsg(): String = "NetworkError"
-
     private fun buildGameDetailsResponse(): GameDetailsDto {
         return GameDetailsDto(
             id = 452,
