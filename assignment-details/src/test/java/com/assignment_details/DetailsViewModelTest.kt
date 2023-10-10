@@ -1,6 +1,6 @@
 package com.assignment_details
 
-import com.assignment_details.state.DetailsUiEvent
+import com.assignment_details.state.UiEvent
 import com.assignment_details.viewmodel.DetailsViewModel
 import com.assignment_domain.model.DataLoadingState
 import com.assignment_domain.model.GameItem
@@ -45,7 +45,7 @@ class DetailsViewModelTest {
     @Test
     fun getGameDetailsSuccessTest() {
         val id = 452
-        val event = DetailsUiEvent.GetDetails(id)
+        val event = UiEvent.GetDetails(id)
         val apiResponse = buildSuccessResponse()
         val expectedResponse = buildGameDetailsResponse().toDomainData()
 
@@ -58,7 +58,7 @@ class DetailsViewModelTest {
     @Test
     fun getGameDetailsLoadingTest() {
         val id = 452
-        val event = DetailsUiEvent.GetDetails(id)
+        val event = UiEvent.GetDetails(id)
         val apiResponse = buildLoadingResponse()
 
         coEvery { useCase(id) } returns apiResponse
@@ -70,7 +70,7 @@ class DetailsViewModelTest {
     @Test
     fun getGameDetailsErrorTest() {
         val id = 452
-        val event = DetailsUiEvent.GetDetails(id)
+        val event = UiEvent.GetDetails(id)
         val apiResponse = buildErrorResponse()
         val expectedError = buildErrorMsg()
 

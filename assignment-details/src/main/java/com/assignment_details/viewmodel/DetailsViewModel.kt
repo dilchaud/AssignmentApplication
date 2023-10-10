@@ -2,7 +2,7 @@ package com.assignment_details.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.assignment_details.state.DetailsUiEvent
+import com.assignment_details.state.UiEvent
 import com.assignment_domain.model.GameState
 import com.assignment_domain.usecases.DetailsApiUseCase
 import com.assignment_domain.model.DataLoadingState
@@ -31,10 +31,10 @@ class DetailsViewModel @Inject constructor(private val useCase: DetailsApiUseCas
         }
     }.launchIn(viewModelScope)
 
-    fun onEvent(uiEvent: DetailsUiEvent) {
+    fun onEvent(uiEvent: UiEvent) {
         viewModelScope.launch {
             when (uiEvent) {
-                is DetailsUiEvent.GetDetails -> getGameDetails(uiEvent.id)
+                is UiEvent.GetDetails -> getGameDetails(uiEvent.id)
             }
         }
     }
