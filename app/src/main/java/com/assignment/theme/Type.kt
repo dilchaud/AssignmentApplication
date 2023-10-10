@@ -1,4 +1,4 @@
-package com.lloydsbankingassignment.theme
+package com.assignment.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

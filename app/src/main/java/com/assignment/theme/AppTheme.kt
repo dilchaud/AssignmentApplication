@@ -1,6 +1,6 @@
 @file:Suppress("PrivatePropertyName")
 
-package com.lloydsbankingassignment.theme
+package com.assignment.theme
 
 import android.app.Activity
 import android.os.Build

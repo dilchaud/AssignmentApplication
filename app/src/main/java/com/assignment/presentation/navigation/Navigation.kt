@@ -1,4 +1,4 @@
-package com.lloydsbankingassignment.presentation.navigation
+package com.assignment.presentation.navigation
 
 import android.util.Log
 import androidx.compose.foundation.layout.padding

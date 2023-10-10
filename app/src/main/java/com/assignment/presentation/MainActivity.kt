@@ -1,4 +1,4 @@
-package com.lloydsbankingassignment.presentation
+package com.assignment.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,8 +10,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.lloydsbankingassignment.presentation.navigation.Navigation
-import com.lloydsbankingassignment.theme.AppTheme
+import com.assignment.presentation.navigation.Navigation
+import com.assignment.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
