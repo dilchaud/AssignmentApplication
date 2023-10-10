@@ -1,18 +1,18 @@
 package com.assignment_home
 
 
+import com.assignment_domain.model.DataLoadingState
+import com.assignment_domain.model.GameItem
 import com.assignment_domain.repository.GameRepository
-import com.assignment_domain.repository.GameRepositoryImpl
 import com.assignment_domain.usecases.HomeApiUseCase
+import com.assignment_home.state.UiEvent
 import com.assignment_home.viewmodel.HomeViewModel
-import com.data.dto.GameListDto
-import com.data.mapper.toDomainData
-import com.data.model.GameItem
-import com.data.service.GameApi
-import com.data.service.DataLoadingState
+import com.data.remote.GameApi
+import com.data.remote.dto.GameListDto
+import com.data.remote.mapper.toDomainData
+import com.data.repository.GameRepositoryImpl
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
-import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.Dispatchers
@@ -27,20 +27,11 @@ import org.junit.Test
 class HomeViewModelTest {
     private val dispatcher = TestCoroutineDispatcher()
 
-    @MockK
-    lateinit var gameApi: GameApi
-
-    @MockK
-    lateinit var repositoryImpl: GameRepositoryImpl
-
-    @MockK
-    lateinit var repository: GameRepository
-
-    @MockK
-    lateinit var viewModel: HomeViewModel
-
-    @MockK
-    lateinit var useCase: HomeApiUseCase
+    private lateinit var gameApi: GameApi
+    private lateinit var repositoryImpl: GameRepositoryImpl
+    private lateinit var repository: GameRepository
+    private lateinit var viewModel: HomeViewModel
+    private lateinit var useCase: HomeApiUseCase
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Before
@@ -51,15 +42,17 @@ class HomeViewModelTest {
         repository = mockk(relaxed = true)
         useCase = HomeApiUseCase(repository)
         repositoryImpl = GameRepositoryImpl(gameApi)
+        viewModel = HomeViewModel(useCase)
     }
 
     @Test
     fun getAllGameListSuccessTest() {
         val apiResponse = buildSuccessResponse()
         val expectedResponse = buildGameDetailsResponse().map { it.toDomainData() }
+        val event = UiEvent.InitState
 
         coEvery { useCase() } returns apiResponse
-        viewModel = HomeViewModel(useCase)
+        viewModel.onEvent(event)
 
         assertEquals(expectedResponse.size, viewModel.gameState.value.gameList?.size)
     }
@@ -68,9 +61,10 @@ class HomeViewModelTest {
     fun getAllGameListErrorTest() {
         val apiResponse = buildErrorResponse()
         val expectedError = buildErrorMsg()
+        val event = UiEvent.InitState
 
         coEvery { useCase() } returns apiResponse
-        viewModel = HomeViewModel(useCase)
+        viewModel.onEvent(event)
 
         assertEquals(expectedError, viewModel.gameState.value.error)
     }
@@ -78,9 +72,10 @@ class HomeViewModelTest {
     @Test
     fun getAllGameListLoadingTest() {
         val apiResponse = buildLoadingResponse()
+        val event = UiEvent.InitState
 
         coEvery { useCase() } returns apiResponse
-        viewModel = HomeViewModel(useCase)
+        viewModel.onEvent(event)
 
         assertEquals(true, viewModel.gameState.value.loading)
     }

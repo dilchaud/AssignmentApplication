@@ -1,9 +1,9 @@
-package com.assignment_domain.di
+package com.assignment.di
 
 import com.assignment_core.util.Constants
 import com.assignment_domain.repository.GameRepository
-import com.assignment_domain.repository.GameRepositoryImpl
-import com.data.service.GameApi
+import com.data.remote.GameApi
+import com.data.repository.GameRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

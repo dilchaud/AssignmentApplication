@@ -1,7 +1,7 @@
-package com.data.service
+package com.data.remote
 
-import com.data.dto.GameDetailsDto
-import com.data.dto.GameListDto
+import com.data.remote.dto.GameDetailsDto
+import com.data.remote.dto.GameListDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 

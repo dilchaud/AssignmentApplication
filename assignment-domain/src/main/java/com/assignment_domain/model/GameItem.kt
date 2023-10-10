@@ -1,4 +1,4 @@
-package com.data.model
+package com.assignment_domain.model
 
 data class GameItem(
     val id: Int? = null,

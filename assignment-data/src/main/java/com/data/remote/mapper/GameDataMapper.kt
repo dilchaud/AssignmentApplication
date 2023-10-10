@@ -1,8 +1,8 @@
-package com.data.mapper
+package com.data.remote.mapper
 
-import com.data.dto.GameDetailsDto
-import com.data.dto.GameListDto
-import com.data.model.GameItem
+import com.assignment_domain.model.GameItem
+import com.data.remote.dto.GameDetailsDto
+import com.data.remote.dto.GameListDto
 
 fun GameListDto.toDomainData(): GameItem =
     GameItem(id, title ?: "", thumbnail ?: "", shortDescription ?: "")

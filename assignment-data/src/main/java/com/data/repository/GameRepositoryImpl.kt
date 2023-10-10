@@ -1,9 +1,10 @@
-package com.assignment_domain.repository
+package com.data.repository
 
-import com.data.mapper.toDomainData
-import com.data.model.GameItem
-import com.data.service.GameApi
-import com.data.service.DataLoadingState
+import com.assignment_domain.model.DataLoadingState
+import com.assignment_domain.model.GameItem
+import com.assignment_domain.repository.GameRepository
+import com.data.remote.GameApi
+import com.data.remote.mapper.toDomainData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch

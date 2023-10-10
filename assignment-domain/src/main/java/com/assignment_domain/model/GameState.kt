@@ -1,6 +1,5 @@
-package com.assignment_core.state
+package com.assignment_domain.model
 
-import com.data.model.GameItem
 
 
 data class GameState(

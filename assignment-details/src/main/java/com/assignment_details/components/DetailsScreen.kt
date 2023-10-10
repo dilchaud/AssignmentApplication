@@ -17,11 +17,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
-import com.assignment_core.state.GameState
+import com.assignment_details.state.DetailsUiEvent
+import com.assignment_details.viewmodel.DetailsViewModel
 
 @Composable
-fun DetailsScreen(state: GameState) {
+fun DetailsScreen(gameId: Int, viewModel: DetailsViewModel = hiltViewModel()) {
+    viewModel.onEvent(DetailsUiEvent.GetDetails(gameId))
+    val state = viewModel.gameState.collectAsStateWithLifecycle().value
     Surface {
         if (state.gameItem != null) {
             Column(

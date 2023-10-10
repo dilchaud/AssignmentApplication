@@ -14,7 +14,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.data.model.GameItem
+import com.assignment_domain.model.GameItem
 
 @Composable
 fun HomeScreenItem(modifier: Modifier, item: GameItem, onItemClick: (Int) -> Unit) {

@@ -1,4 +1,4 @@
-package com.assignment_core.state
+package com.assignment_home.state
 
 sealed interface UiEffect {
     class OnError(val errorMsg: String) : UiEffect
