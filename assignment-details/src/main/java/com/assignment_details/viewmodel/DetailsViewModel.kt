@@ -2,7 +2,7 @@ package com.assignment_details.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.assignment_details.state.UiEvent
+import com.assignment_details.mvicontract.UiEvent
 import com.assignment_domain.model.GameState
 import com.assignment_domain.usecases.DetailsApiUseCase
 import com.assignment_domain.model.DataLoadingState

@@ -25,16 +25,14 @@ import org.junit.Test
 class GameRepositoryImplTest {
     private val dispatcher = TestCoroutineDispatcher()
 
-    private lateinit var gameApi: GameApi
-    private lateinit var repository: GameRepository
-    private lateinit var repositoryImpl: GameRepositoryImpl
+    private var gameApi: GameApi = mockk()
+    private var repository: GameRepository = mockk()
+    private var repositoryImpl: GameRepositoryImpl = mockk()
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Before
     fun setUp() {
         Dispatchers.setMain(dispatcher)
-        gameApi = mockk(relaxed = true)
-        repository = mockk(relaxed = true)
         repositoryImpl = GameRepositoryImpl(gameApi)
     }
 
@@ -71,30 +69,26 @@ class GameRepositoryImplTest {
         emit(DataLoadingState.Success(result))
     }
 
-    private fun buildGameDetailsResponse(): GameDetailsDto {
-        return GameDetailsDto(
-            id = 452,
-            title = "Call Of Duty: Warzone",
-            thumbnail = "https:\\/\\/www.freetogame.com\\/g\\/452\\/thumbnail.jpg",
-            description = "Call of Duty: Warzone is both a standalone free-to-play battle royale and modes accessible via Call of Duty: Modern Warfare. Warzone features two modes \\u2014 the general 150-player battle royle, and \\u201cPlunder\\u201d. The latter mode is described as a \\u201crace to deposit the most Cash\\u201d. In both modes players can both earn and loot cash to be used when purchasing in-match equipment, field upgrades, and more. Both cash and XP are earned in a variety of ways, including completing contracts.\\r\\n\\r\\nAn interesting feature of the game is one that allows players who have been killed in a match to rejoin it by winning a 1v1 match against other felled players in the Gulag.\\r\\n\\r\\nOf course, being a battle royale, the game does offer a battle pass. The pass offers players new weapons, playable characters, Call of Duty points, blueprints, and more. Players can also earn plenty of new items by completing objectives offered with the pass."
-        )
-    }
+    private fun buildGameDetailsResponse(): GameDetailsDto = GameDetailsDto(
+        id = 452,
+        title = "Call Of Duty: Warzone",
+        thumbnail = "https:\\/\\/www.freetogame.com\\/g\\/452\\/thumbnail.jpg",
+        description = "Call of Duty: Warzone is both a standalone free-to-play battle royale and modes accessible via Call of Duty: Modern Warfare. Warzone features two modes \\u2014 the general 150-player battle royle, and \\u201cPlunder\\u201d. The latter mode is described as a \\u201crace to deposit the most Cash\\u201d. In both modes players can both earn and loot cash to be used when purchasing in-match equipment, field upgrades, and more. Both cash and XP are earned in a variety of ways, including completing contracts.\\r\\n\\r\\nAn interesting feature of the game is one that allows players who have been killed in a match to rejoin it by winning a 1v1 match against other felled players in the Gulag.\\r\\n\\r\\nOf course, being a battle royale, the game does offer a battle pass. The pass offers players new weapons, playable characters, Call of Duty points, blueprints, and more. Players can also earn plenty of new items by completing objectives offered with the pass."
+    )
 
-    private fun buildHomeDetailsResponse(): List<GameListDto> {
-        return listOf(
-            GameListDto(
-                id = 540,
-                title = "Overwatch",
-                thumbnail = "https:\\/\\/www.freetogame.com\\/g\\/540\\/thumbnail.jpg",
-                shortDescription = "A hero-focused first-person team shooter from Blizzard Entertainment."
-            ), GameListDto(
-                id = 521,
-                title = "Diablo Immortal",
-                thumbnail = "https:\\/\\/www.freetogame.com\\/g\\/521\\/thumbnail.jpg",
-                shortDescription = "Built for mobile and also released on PC, Diablo Immortal fills in the gaps between Diablo II and III in an MMOARPG environment."
-            )
+    private fun buildHomeDetailsResponse(): List<GameListDto> = listOf(
+        GameListDto(
+            id = 540,
+            title = "Overwatch",
+            thumbnail = "https:\\/\\/www.freetogame.com\\/g\\/540\\/thumbnail.jpg",
+            shortDescription = "A hero-focused first-person team shooter from Blizzard Entertainment."
+        ), GameListDto(
+            id = 521,
+            title = "Diablo Immortal",
+            thumbnail = "https:\\/\\/www.freetogame.com\\/g\\/521\\/thumbnail.jpg",
+            shortDescription = "Built for mobile and also released on PC, Diablo Immortal fills in the gaps between Diablo II and III in an MMOARPG environment."
         )
-    }
+    )
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @After

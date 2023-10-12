@@ -1,4 +1,4 @@
-package com.assignment_home.state
+package com.assignment_home.mvicontract
 
 sealed interface UiEffect {
     class OnError(val errorMsg: String) : UiEffect

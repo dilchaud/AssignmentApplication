@@ -10,7 +10,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.assignment_core.util.Constants.GAME_ID
+import com.assignment.presentation.MainActivity.Companion.GAME_ID
 import com.assignment_details.components.DetailsScreen
 import com.assignment_home.components.HomeScreen
 import com.assignment_home.navigation.DetailsScreenNav

@@ -1,6 +1,5 @@
 package com.assignment.di
 
-import com.assignment_core.util.Constants
 import com.assignment_domain.repository.GameRepository
 import com.data.remote.GameApi
 import com.data.repository.GameRepositoryImpl
@@ -14,6 +13,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+
 @InstallIn(SingletonComponent::class)
 @Module
 class AppModule {
@@ -24,7 +24,7 @@ class AppModule {
         OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .build()
-    ).addConverterFactory(GsonConverterFactory.create()).baseUrl(Constants.BASE_URL).build()
+    ).addConverterFactory(GsonConverterFactory.create()).baseUrl(BASE_URL).build()
 
     @Singleton
     @Provides
@@ -34,5 +34,9 @@ class AppModule {
     @Provides
     fun provideRepository(gameApi: GameApi): GameRepository {
         return GameRepositoryImpl(gameApi)
+    }
+
+    companion object {
+        private const val BASE_URL: String = "https://www.freetogame.com/api/"
     }
 }

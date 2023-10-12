@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
-import com.assignment_details.state.UiEvent
+import com.assignment_details.mvicontract.UiEvent
 import com.assignment_details.viewmodel.DetailsViewModel
 
 @Composable

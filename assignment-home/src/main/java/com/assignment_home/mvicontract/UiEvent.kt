@@ -1,4 +1,4 @@
-package com.assignment_home.state
+package com.assignment_home.mvicontract
 
 sealed interface UiEvent {
     class OnNavigation(val id: Int) : UiEvent

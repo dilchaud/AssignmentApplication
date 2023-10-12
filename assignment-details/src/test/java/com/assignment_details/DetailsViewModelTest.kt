@@ -1,6 +1,6 @@
 package com.assignment_details
 
-import com.assignment_details.state.UiEvent
+import com.assignment_details.mvicontract.UiEvent
 import com.assignment_details.viewmodel.DetailsViewModel
 import com.assignment_domain.model.DataLoadingState
 import com.assignment_domain.model.GameItem
@@ -25,9 +25,9 @@ import org.junit.Test
 class DetailsViewModelTest {
     private val dispatcher = TestCoroutineDispatcher()
 
-    private lateinit var gameApi: GameApi
+    private var gameApi: GameApi = mockk()
     private lateinit var repositoryImpl: GameRepositoryImpl
-    private lateinit var repository: GameRepository
+    private var repository: GameRepository = mockk()
     private lateinit var viewModel: DetailsViewModel
     private lateinit var useCase: DetailsApiUseCase
 
@@ -35,8 +35,6 @@ class DetailsViewModelTest {
     @Before
     fun setUp() {
         Dispatchers.setMain(dispatcher)
-        gameApi = mockk(relaxed = true)
-        repository = mockk(relaxed = true)
         useCase = DetailsApiUseCase(repository)
         repositoryImpl = GameRepositoryImpl(gameApi)
         viewModel = DetailsViewModel(useCase)

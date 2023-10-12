@@ -5,13 +5,12 @@ import com.assignment_domain.model.DataLoadingState
 import com.assignment_domain.model.GameItem
 import com.assignment_domain.repository.GameRepository
 import com.assignment_domain.usecases.HomeApiUseCase
-import com.assignment_home.state.UiEvent
+import com.assignment_home.mvicontract.UiEvent
 import com.assignment_home.viewmodel.HomeViewModel
 import com.data.remote.GameApi
 import com.data.remote.dto.GameListDto
 import com.data.remote.mapper.toDomainData
 import com.data.repository.GameRepositoryImpl
-import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.mockk
 import junit.framework.TestCase.assertEquals
@@ -27,9 +26,9 @@ import org.junit.Test
 class HomeViewModelTest {
     private val dispatcher = TestCoroutineDispatcher()
 
-    private lateinit var gameApi: GameApi
+    private var gameApi: GameApi = mockk()
     private lateinit var repositoryImpl: GameRepositoryImpl
-    private lateinit var repository: GameRepository
+    private var repository: GameRepository = mockk()
     private lateinit var viewModel: HomeViewModel
     private lateinit var useCase: HomeApiUseCase
 
@@ -37,9 +36,6 @@ class HomeViewModelTest {
     @Before
     fun setUp() {
         Dispatchers.setMain(dispatcher)
-        MockKAnnotations.init(this, relaxUnitFun = true)
-        gameApi = mockk(relaxed = true)
-        repository = mockk(relaxed = true)
         useCase = HomeApiUseCase(repository)
         repositoryImpl = GameRepositoryImpl(gameApi)
         viewModel = HomeViewModel(useCase)

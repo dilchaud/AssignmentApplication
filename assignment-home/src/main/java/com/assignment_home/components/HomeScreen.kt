@@ -14,8 +14,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.assignment_home.state.UiEvent
-import com.assignment_home.state.UiEffect
+import com.assignment_home.mvicontract.UiEffect
+import com.assignment_home.mvicontract.UiEvent
 import com.assignment_home.navigation.DetailsScreenNav
 import com.assignment_home.viewmodel.HomeViewModel
 import kotlinx.coroutines.flow.collectLatest

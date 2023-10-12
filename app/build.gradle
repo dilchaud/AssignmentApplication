@@ -48,7 +48,6 @@ dependencies {
     implementation 'androidx.compose.material3:material3'
     implementation project(path: ':assignment-home')
     implementation project(path: ':assignment-details')
-    implementation project(path: ':assignment-core')
 
     //Dagger Hilt
     implementation "com.google.dagger:hilt-android:2.44"

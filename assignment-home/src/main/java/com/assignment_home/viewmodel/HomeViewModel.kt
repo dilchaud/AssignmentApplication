@@ -3,8 +3,8 @@ package com.assignment_home.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.assignment_domain.model.GameState
-import com.assignment_home.state.UiEvent
-import com.assignment_home.state.UiEffect
+import com.assignment_home.mvicontract.UiEvent
+import com.assignment_home.mvicontract.UiEffect
 import com.assignment_domain.usecases.HomeApiUseCase
 import com.assignment_domain.model.DataLoadingState
 import dagger.hilt.android.lifecycle.HiltViewModel
